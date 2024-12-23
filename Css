@@ -1,0 +1,114 @@
+body {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #4a0072;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.8);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.8);
+  text-align: center;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+button {
+  background: #d500f9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #4a0072;
+}
+
+/* Added styles for X and O */
+.cell.x::before {
+  content: "X";
+  color: #d500f9;
+  font-size: 3rem;
+}
+
+.cell.circle::before {
+  content: "O";
+  color: #4a0072;
+  font-size: 3rem;
+}
+
+/* Loading screen styles */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.loading-content h1 {
+  font-size: 3rem;
+  color: #4a0072;
+}
+
+.loading-content p {
+  font-size: 1.5rem;
+  color: #4a0072;
+}
+
+.hidden {
+  display: none;
+}
